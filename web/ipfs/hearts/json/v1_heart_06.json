@@ -1,0 +1,20 @@
+{
+  "description": "Heart of Butterfly #06", 
+  "image": "https://ipfs.io/ipfs/QmUvAvGLEfrWoeQaKTNc4WpNa6m3iXXd4VcJrtYQKbXjnu", 
+  "name": "Heart",
+  "attributes": [
+	{
+	  "trait_type": "rarity",
+	  "value": "common"
+	},
+	{
+	  "trait_type": "status",
+	  "value": "heart"
+	},
+	{
+	  "display_type": "number",
+	  "trait_type": "type_id",
+	  "value": 6
+	}
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "description": "Butterfly", 
+  "image": "https://ipfs.io/ipfs/QmPFy5bPu956kchSm4uvwSiavvy9ZfgTAFyMbMxfNGRsb1", 
+  "name": "Butterfly #07",
+  "attributes": [
+	{
+	  "trait_type": "rarity",
+	  "value": "common"
+	},
+	{
+	  "trait_type": "status",
+	  "value": "alive"
+	},
+	{
+	  "display_type": "number",
+	  "trait_type": "type_id",
+	  "value": 7
+	}
+  ]
+}

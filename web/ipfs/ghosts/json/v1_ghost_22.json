@@ -1,0 +1,20 @@
+{
+  "description": "Butterfly", 
+  "image": "https://ipfs.io/ipfs/QmSoaY8rkT2o1c7pSM8t9MKaXFr9GDZQpDqVrPB6Wx7NEX", 
+  "name": "Butterfly #22",
+  "attributes": [
+	{
+	  "trait_type": "rarity",
+	  "value": "rare"
+	},
+	{
+	  "trait_type": "status",
+	  "value": "ghost"
+	},
+	{
+	  "display_type": "number",
+	  "trait_type": "type_id",
+	  "value": 22
+	}
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "description": "Butterfly", 
+  "image": "https://ipfs.io/ipfs/QmVn3seYxMnK8s4UskYc3gpWh88D744wntGSNzUHEX8EVh", 
+  "name": "Butterfly #30",
+  "attributes": [
+	{
+	  "trait_type": "rarity",
+	  "value": "epic"
+	},
+	{
+	  "trait_type": "status",
+	  "value": "ghost"
+	},
+	{
+	  "display_type": "number",
+	  "trait_type": "type_id",
+	  "value": 30
+	}
+  ]
+}

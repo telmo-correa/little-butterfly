@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+        <title>Little Butterfly</title>
+
+        <link href="css/app.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="js/web3.min.js"></script>
+        <script src="js/truffle-contract.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.4.3/lottie.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/fortmatic@latest/dist/fortmatic.js"></script>
+        <script src="js/app.js"></script>
+
+		<link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+		<link rel="manifest" href="images/site.webmanifest">
+		<link rel="mask-icon" href="images/safari-pinned-tab.svg" color="#2b5797">
+		<link rel="shortcut icon" href="images/favicon.ico">
+		<meta name="msapplication-TileColor" content="#2b5797">
+		<meta name="msapplication-config" content="images/browserconfig.xml">
+		<meta name="theme-color" content="#23133b">
+    </head>
+
+    <body>
+        <div class="flex-center position-ref">
+
+			<div class="top-left collapse">
+				<a href="#" class="returnHome">
+					<img src="images/favicon.ico" width="24px"/>
+				</a>
+			</div>
+
+            <div class="top-left links">
+                <a href="#" class="returnHome">little butterfly 
+				<span class="network-indicator-mainnet">(mainnet)</span>
+				<span class="network-indicator-ropsten">(ropsten)</span>
+				<span class="network-indicator-rinkeby">(rinkeby)</span>
+				<span class="network-indicator-kovan">(kovan)</span>
+				</a>				
+            </div>
+		
+            <div class="top-right collapse">
+				<a href="#openNetworks"><img src='images/share.png' width='32px' style='padding-right: 2rem'/></a>
+				<a href="#openCharts">≡</a>
+				<a href="about.html">?</a>
+            </div>
+
+            <div class="top-right links">
+				<a href="#openNetworks">network</a>
+				<a href="#openCharts">charts</a>
+				<a href="about.html">about</a>
+            </div>
+
+        </div>
+
+        <div class="content">
+
+            <header id="header" class="header">
+                <img class="img" src="images/little_butterfly.png" width="300px" height="93px" alt="Little Buterfly" >
+            </header>
+
+            <div id="main" class="main">
+                <div id="img-scenario"></div>
+                <div id="img-chest"></div>
+                <div id="img-flower"></div>
+				<div id="img-butterfly"></div>
+            </div>
+
+            <div id="aside1" class="aside aside-1">
+                <span id="flowerIndex">garden #</span>
+
+                <ul class="list1">
+                    <li><span class="gardenTitle">my garden</span></li>
+                    <li> <br> </li>
+                    <li><span class="livingFlower">#</span> of gardening</li>
+                    <li><span class="hostedButterflies">#</span> <span class="hostedButterfliesLabel">hosted butterflies</span></li>
+                    <li><span class="collectedHearts">#</span> <span class="collectedHeartsLabel">collected hearts</span></li>
+                </ul>
+
+				<ul class="list2 under">
+					<li>world garden</li>
+                    <li> <br> </li>
+                    <li>connected flowers: <span class="connectedFlowers">#</span></li>
+                    <li>total butterflies: <span class="totalButterflies">#</span></li>
+                    <li>dropped hearts: <span class="droppedHearts">#</span></li>
+                </ul>
+            </div>
+
+            <div id="aside2" class="aside aside-2">
+				<span id="worldIndex">all gardens</span>
+
+                <ul class="list2">
+					<li>world garden</li>
+                    <li> <br> </li>
+                    <li>connected flowers: <span class="connectedFlowers">#</span></li>
+                    <li>total butterflies: <span class="totalButterflies">#</span></li>
+                    <li>dropped hearts: <span class="droppedHearts">#</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="openCharts" class="modalDialog">
+            <div class="flex-center">
+                <a href="#close" title="Close" class="close">X</a>
+                <div class="btn-group">
+                    <a id="btnButterflies" href="#openButterflies" class="button">butterflies</a>
+                    <a id="btnFlowers" href="#openFlowers" class="button">flowers</a>
+                    <a id="btnHearts" href="#openHearts" class="button">hearts</a>
+                </div>
+            </div>
+        </div>
+		
+		<div id="openNetworks" class="modalDialog">
+            <div class="flex-center">
+                <a href="#close" title="Close" class="close">X</a>
+				<div class="flex-center">
+				
+					<div class="btn-group">
+						<a href="#" onclick="App.init(InitOptions.AUTODETECT)" class="button">
+							<img src="images/favicon.ico" class="network-indicator-transform-unknown dropdown-icon"/>
+							Autodetect
+						</a>
+						<a href="#" onclick="App.init(InitOptions.FIXED_MAINNET)" class="button">
+							<img src="images/favicon.ico" class="network-indicator-transform-mainnet dropdown-icon"/>
+							Mainnet
+						</a>
+						<a href="#" onclick="App.init(InitOptions.FIXED_ROPSTEN)" class="button">
+							<img src="images/favicon.ico" class="network-indicator-transform-ropsten dropdown-icon"/>
+							Ropsten
+						</a>
+						<a href="#" onclick="App.init(InitOptions.FIXED_KOVAN)" class="button">
+							<img src="images/favicon.ico" class="network-indicator-transform-kovan dropdown-icon"/>
+							Kovan
+						</a>
+						<a href="#" onclick="App.init(InitOptions.FIXED_RINKEBY)" class="button">
+							<img src="images/favicon.ico" class="network-indicator-transform-rinkeby dropdown-icon"/>
+							Rinkeby
+						</a>
+						<a href="#" onclick="App.init(InitOptions.SMS_MAINNET)" class="button">
+							<img src="images/fortmatic.ico" class="network-indicator-transform-mainnet dropdown-icon"/>
+							Mobile Mainnet
+						</a>
+						<a href="#" onclick="App.init(InitOptions.SMS_RINKEBY)" class="button">
+							<img src="images/fortmatic.ico" class="network-indicator-transform-rinkeby dropdown-icon"/>
+							Mobile Rinkeby
+						</a>
+					</div>
+				</div>
+            </div>
+        </div>
+
+        <div id="openChest" class="modalDialog">
+            <div>
+                <a id="close" href="#close" title="Close" class="close">X</a>
+                <div class="panel">
+					<div class="container containerAside">
+						<div class="panelAsideImg">
+							<img id="panelFlowerImg" src="animation/flowers/15/images/img_0.png" width="100px" alt="Flower">
+						</div>
+                        <div class="panelAsideContent">
+                            <ul>
+                                <li id="flowerTag"></li>
+                                <li>gardening</li>
+                                <li id="flowerDay"></li>
+                                <li id="flowerTime"></li>
+                                <li><a href="/" style="color:blue">visit</a></li>
+                            </ul>
+                        </div>
+					</div>
+                    <div class="container containerItems">
+                        <div class="panelTop">
+                            <div id="totalButterflyOwned" class="panelTitle"></div>
+                            <div id="panelButterflies" class="panelTopContent"></div>
+                        </div>
+                        <div class="panelBottom">
+                            <div id="totalHeartOwned" class="panelTitle"></div>
+                            <div id="panelHearts" class="panelBottomContent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="openButterflies" class="modalDialog">
+            <div>
+                <a href="#openCharts" title="Close" class="close">X</a>
+                <div class="table-wrapper">
+                    <table id="butterflies_table">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>type</th>
+                                <th class="column-optional">visited flowers</th>
+                                <th class="column-optional">time of flight</th>
+                                <th>time left</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div id="butterfliesPagination" class="pagination flex-center"></div>
+            </div>
+        </div>
+
+        <div id="openFlowers" class="modalDialog">
+            <div>
+                <a href="#openCharts" title="Close" class="close">X</a>
+                <div class="table-wrapper">
+                    <table id="flowers_table">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>garden</th>
+                                <th class="column-optional">gardening time</th>
+                                <th>loved by</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div id="flowersPagination" class="pagination flex-center"></div>
+            </div>
+        </div>
+
+        <div id="openHearts" class="modalDialog">
+            <div>
+                <a href="#openCharts" title="Close" class="close">X</a>
+                <div class="table-wrapper">
+                    <table id="hearts_table">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th class="column-optional">from butterfly</th>
+                                <th>given at</th>
+                                <th>size</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div id="heartsPagination" class="pagination flex-center"></div>
+            </div>
+        </div>
+
+        <div id="openButterfly" class="modalDialog">
+            <div>
+                <a href="#close" title="Close" class="close">X</a>
+                <div class="panel">
+					<div class="container containerAside">
+						<div class="panelAsideImg">
+							<img id="panelButterflyImg" src="" width="120px" alt="Butterfly">
+						</div>
+                        <div class="panelAsideContent">
+                            <ul>
+                                <li id="butterflyTag"></li>
+                                <li id="butterflyFlight">flight</li>
+                                <li id="butterflyDay"></li>
+                                <li id="butterflyTime"></li>
+                                <li id="butterflyVisit"></li>
+                            </ul>
+                        </div>
+					</div>
+					<div class="container containerItems">
+                        <div class="panelFull">
+                            <div id="butterflyID" class="panelItem"></div>
+                            <div class="panelItem">time left: <span id="timeLeft"></span></div>
+                            <div id="butterflyType" class="panelItem"></div>
+                            <div id="butterflyVisited" class="panelItem"></div>
+                            <div id="panelFlowersFromButterflies" class="panelFullContent"></div>
+                        </div>
+					</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="openHeart" class="modalDialog">
+            <div>
+                <a href="#close" title="Close" class="close">X</a>
+                <div class="panel">
+					<div class="container containerAside">
+						<div class="panelAsideImg">
+							<img id="panelHeartImg" src="" width="120px" alt="Heart">
+						</div>
+                        <div class="panelAsideContent">
+                            <ul>
+                                <li id="heartTag"></li>
+                                <li>beating</li>
+                                <li id="heartDay"></li>
+                                <li id="heartTime"></li>
+                                <li id="heartVisit"></li>
+                            </ul>
+                        </div>
+					</div>
+					<div class="container containerItems">
+                        <div class="panelFull">
+                            <div id="heartID" class="panelItem"></div>
+                            <div id="heartType" class="panelItem"></div>
+                            <div id="heartVisited" class="panelItem"></div>
+                            <div id="panelFlowersFromHearts" class="panelFullContent"></div>
+                        </div>
+					</div>
+                </div>
+            </div>
+        </div>
+
+        <div id="openTransfer" class="modalDialog">
+            <div>
+                <a id="close" href="#close" title="Close" class="close">X</a>
+                <div class="table-wrapper">
+                    <table id="transfer_table">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>garden</th>
+                                <th class="column-optional">gardening time</th>
+                                <th>loved by</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div id="transferPagination" class="pagination flex-center"></div>
+            </div>
+        </div>
+
+        <div id="openTransferHeart" class="modalDialog">
+            <div>
+                <a id="close" href="#close" title="Close" class="close">X</a>
+                <div class="table-wrapper">
+                    <table id="transferHeart_table">
+                        <thead>
+                            <tr>
+                                <th>&nbsp;</th>
+                                <th>garden</th>
+                                <th class="column-optional">gardening time</th>
+                                <th>loved by</th>
+                                <th>&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div id="transferHeartPagination" class="pagination flex-center"></div>
+            </div>
+        </div>
+
+        <div id="openJoin" class="modalDialog">
+            <div style="padding: 20px; min-width: calc(95% - 140px);">
+                <a href="#openCharts" title="Close" class="close">X</a>
+                <h2>Join</h2>
+                <div class="flex-center">
+                    <div class="btn-group-join">
+					
+                        <span class="join-message join-no-web3">
+							<p>Little Butterfly runs on a smart contract, deployed to decentralized Ethereum blockchain networks.</p>
+
+							<p>We could not detect a web3 support on your browser -- you will be able to look at the existing game, but not participate.  Install <a href="https://metamask.io">metamask</a>, or use a dapp-compatible browser to access to the full experience -- or go under 'Networks' and choose a mobile-compatible network to play using your phone.</p>
+						</span>
+
+						<span class="join-message join-no-access">
+							<p>Little Butterfly runs on a small contract, deployed to decentralized Ethereum blockchain networks.</p>
+
+							<p>We have been unable to gain access to your user account -- you will be able to look at the existing game, but not participate.  Reload the website and grant access to little butterfly to access the full experience.</p>
+						</span>
+							
+						<span class="join-message join-unsupported-network">
+							<p>Little butterfly runs on a smart contract, deployed to decentralized Ethereum blockchain networks.  This website supports interfacing with the contracts deployed to four networks: the main network (mainnet), and the test networks ropsten, rinkeby, and kovan.</p>
+
+							<p>You can get free ether on test networks, letting you play for free.</p>
+
+							<p>We detect you are currently connected to <span class="current-network">X</span>, which is not a supported network.  You will be able to look at the existing game, but not participate.  Log into a supported network and reload the website to have access to the full experience.</p>
+						</span>
+						
+						<span class="join-message join-incorrect-network">
+							<p>Little butterfly runs on a smart contract, deployed to decentralized Ethereum blockchain networks.  This website supports interfacing with the contracts deployed to four networks: the main network (mainnet), and the test networks ropsten, rinkeby, and kovan.</p>
+
+							<p>We detect you are currently connected to <span class="current-network">X</span>, which is different from the network you selected, <span class="target-network">Y</span>.  You will be able to look at the game in <span class="target-network">Y</span>, but not participate. </p>
+						</span>
+
+						<span class="join-message join-supported-network">
+							<p>Little butterfly runs on a smart contract, deployed to decentralized Ethereum blockchain networks.  This website supports interfacing with the contracts deployed to four networks: the main network (mainnet), and the test networks ropsten, rinkeby, and kovan.</p>
+
+							<p>You can get free ether on test networks, letting you play for free.</p>
+
+							<p>We detect you are currently connected to <span class="current-network">X</span>, but you have not joined the game.  Click join to register your own account, and receive your flower and butterfly.</p>
+						</span>
+						
+						<p>Click 'about' for more information.</p>
+						
+                        <div class="flex-center" style="margin-top:5vh">
+							<div class="btn-group">
+								<a id="btnJoin" href="#" class="button join-message join-supported-network">join</a>
+								<a id="btnAbout" href="about.html" class="button">about</a>
+								<a id="btnClose" href="#openCharts" class="button">close</a>
+							</div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+            window.myTimer = true;
+
+            $(document).on('click', '#btnJoin', function() {
+                App.claim();
+                alert('After a successful transaction, the page will be reloaded for added content.')
+            });
+
+        </script>
+    </body>
+</html>

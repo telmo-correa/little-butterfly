@@ -1,0 +1,12 @@
+{
+  "description": "Flower",
+  "image": "https://ipfs.io/ipfs/QmeWjxrcBxu6vpnfgL2vaeBu4moBtmn1CmwhfWqR9kbMWV",
+  "name": "White Flower",
+  "attributes": [
+	{
+	  "display_type": "number",
+	  "trait_type": "type_id",
+	  "value": 0
+	}
+  ]
+}

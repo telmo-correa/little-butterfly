@@ -1,0 +1,12 @@
+{
+  "description": "Flower", 
+  "image": "https://ipfs.io/ipfs/QmTgRVPTcS2zF3jzSUrcKnSrpeBy3mGuHJ31wDtXvrMn5C", 
+  "name": "Flower #03",
+  "attributes": [
+	{
+	  "display_type": "number",
+	  "trait_type": "type_id",
+	  "value": 3
+	}
+  ]
+}

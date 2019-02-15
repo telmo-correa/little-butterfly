@@ -1,0 +1,30 @@
+{
+  "name": "little-butterfly",
+  "version": "1.0.0",
+  "description": "Small crypto-collectible game about butterflies",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "openzeppelin-solidity": "^2.0.0",
+    "solc": "^0.4.24",
+    "truffle-hdwallet-provider": "^1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "truffle test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/someusername6/little-butterfly.git"
+  },
+  "keywords": [
+    "game"
+  ],
+  "author": "Telmo Correa",
+  "bugs": {
+    "url": "https://github.com/someusername6/little-butterfly/issues"
+  },
+  "homepage": "https://github.com/someusername6/little-butterfly#readme"
+}

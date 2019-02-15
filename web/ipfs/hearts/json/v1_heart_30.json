@@ -1,0 +1,20 @@
+{
+  "description": "Heart of Butterfly #30", 
+  "image": "https://ipfs.io/ipfs/QmUeJevLSbdbX9RZeHJ8UWST9nPQxyCs4m8118K5QtRr6d", 
+  "name": "Heart",
+  "attributes": [
+	{
+	  "trait_type": "rarity",
+	  "value": "epic"
+	},
+	{
+	  "trait_type": "status",
+	  "value": "heart"
+	},
+	{
+	  "display_type": "number",
+	  "trait_type": "type_id",
+	  "value": 30
+	}
+  ]
+}
